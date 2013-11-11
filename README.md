@@ -4,7 +4,7 @@ Steam Market Item Poster
 Easy and automated item posting onto the steam market!
 --------------------------
 
-If you have an questions or suggestions please feel free to contact me at alexbarkell@gmail.com
+If you have any questions, suggestions, or bugs please feel free to contact me at alexbarkell@gmail.com
 
 ---------
 
