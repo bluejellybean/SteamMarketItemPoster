@@ -8,9 +8,15 @@ private:
 	//prints the main menu
 	void printOutMainMenu();
 
+	//prints a bunch of new lines
+	void printNewLines(int);
+
 	//func that starts main, user enters values here
 	//TODO: change this variable to something better
 	void mainLoopOption();
+
+	//on key press, brings back to main menu
+	void gotoMainMenuOnAnyKey();
 
 	//Checks that user input is valid
 	int menuOptionIntChecker(int);
@@ -22,8 +28,7 @@ private:
 	void howtoMenu();
 	void aboutMenu();
 	
-	//on key press, brings back to main menu
-	void gotoMainMenuOnAnyKey();
+
 	
 	//dollar, cent, and # of items user is selling. Used in mainLoopOption
 	int dValue;

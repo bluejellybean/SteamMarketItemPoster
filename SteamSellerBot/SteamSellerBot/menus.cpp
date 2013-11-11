@@ -54,6 +54,14 @@ void menus::gotoMainMenuOnAnyKey() {//rename to gotoMainMenuOnAnyKey
 	}
 }
 
+void menus::printNewLines(int numberOfNewLines){
+
+	for(int i = 0; i < numberOfNewLines; i++){
+		std::cout<<"\n";
+	}
+	std::cout<<std::endl;
+}
+
 void menus::printOutMainMenu(){
 
 	menuOption = 0;
@@ -61,7 +69,7 @@ void menus::printOutMainMenu(){
 	std::cout<<"(2). Options" <<std::endl;
 	std::cout<<"(3). How-To" <<std::endl;
 	std::cout<<"(4). About" <<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(19);
 }
 
 void menus::menuLogic(){
@@ -130,7 +138,8 @@ void menus::setSleepTime(){
 
 	std::cout<<"Current time between events is: "<<sleepTime<<std::endl;
 	std::cout<<"Enter new time between events:"<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(21);
+	//std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 
@@ -145,7 +154,7 @@ void menus::setPageNumber(){
 	
 	std::cout<<"Current page number is: "<<pageNumber<<std::endl;
 	std::cout<<"Emter a new page number:"<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(21);
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 	
@@ -160,7 +169,7 @@ void menus::setSlotNumber(){
 	
 	std::cout<<"Current slot number is: "<<slotNumber<<std::endl;
 	std::cout<<"Enter a new slot number:"<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(21);
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 	
@@ -175,7 +184,7 @@ void menus::setScrollAmount(){
 
 	std::cout<<"Current scroll wheel amount is: "<<scrollWheelAmount<<std::endl;
 	std::cout<<"Enter new scroll wheel amount:"<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(21);
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 	
@@ -192,7 +201,7 @@ void menus::setSellButtonYAxisPos(){
 	std::cout<<"Current Y axis is: "<<sellButtonYAxisPos<<std::endl;
 	std::cout<<"Enter new Y axis value:"<<std::endl;
 	std::cout<<"Note* you may have to play with this value a little bit"<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(20);
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 	if(tempNumber > 0){
@@ -211,7 +220,6 @@ void menus::confirmMainLoopInformation(){
 	case 1:
 		break;
 	default:
-		std::cout<<"default";
 		printOutMainMenu();
 		menuLogic();
 	}
@@ -221,15 +229,15 @@ void menus::confirmMainLoopInformation(){
 void menus::mainLoopOption(){
 	
 	std::cout<<"Enter how many Items for sale: "<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(22);
 	std::cin>>numberOfitemsToSell;
 	
 	std::cout<<"Enter Dollar Amount: "<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(22);
 	std::cin>> dValue;
 	
 	std::cout<<"Enter Coin Amount: "<<std::endl;
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(22);
 	std::cin>>cValue;
 
 	//confirm order
@@ -239,9 +247,9 @@ void menus::mainLoopOption(){
 	}else{
 		std::cout<<numberOfitemsToSell<<" Items to sell at: $"<<dValue<<"."<<cValue<<" each"<<std::endl;
 	}
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(20);
+
 	std::cout<<"Enter 1 to contiune:"<<std::endl;
-	
 	confirmMainLoopInformation();
 	
 	mainSellFunction(dValue, cValue, numberOfitemsToSell, scrollWheelAmount,sleepTime,pageNumber,slotNumber,sellButtonYAxisPos);
@@ -258,7 +266,7 @@ void menus::optionsMenu(){
 	std::cout<<"(4). Scroll Wheel amount:           "<<scrollWheelAmount<<std::endl;
 	std::cout<<"(5). Y axis positon on sell button: "<<sellButtonYAxisPos<<std::endl;
 	//new lines will need to be updated on every change
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(18);
 	optionMenuLogic();
 }
 
@@ -273,7 +281,7 @@ void menus::howtoMenu(){
 	std::cout<<"6. Wait! Seriously though, don't touch your pc until it's done"<<std::endl;
 	
 	//new lines will need to be updated on every change
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(16);
 	gotoMainMenuOnAnyKey();
 }
 
@@ -285,7 +293,7 @@ void menus::aboutMenu(){
 	std::cout<<std::endl;
 	
 	//new lines will need to be updated on every change
-	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
+	printNewLines(18);
 	gotoMainMenuOnAnyKey();
 }
 
