@@ -2,6 +2,7 @@
 class KeyboardSim
 {
 private:
+	//converts user entered amounts (dollar and cents) into a useable form for simulateKeyPress
 	int convertIntToHex(int oldValue);
 
 	//for getting individual digits of numbers
@@ -14,8 +15,7 @@ public:
 	int dollarValue;
 	int centValue;
 
-	void mainSellLoop();
-
+	//simulates user key presses. used in entering amount of money into steam
 	void simulateKeyPress(int);
 	void enterValuesIntoSteam();
 

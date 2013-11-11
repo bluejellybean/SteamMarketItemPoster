@@ -8,10 +8,13 @@
 //void FindCursorPos();
 int main (){
 	menus newMenu;
+
 	newMenu.loadPresetVariables();
 	newMenu.menuLogic();
 
 }
+
+//This is just a tool to help get x y cords
 
 //void FindCursorPos(){
 //	POINT p;

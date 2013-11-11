@@ -214,10 +214,6 @@ void menus::confirmMainLoopInformation(){
 //////////////////////////////////////////////////
 void menus::mainLoopOption(){
 	
-	//int dValue = 0;
-	//int cValue = 0;
-	//int numberOfitemsToSell = 0;
-	
 	std::cout<<"Enter how many Items for sale: "<<std::endl;
 	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
 	std::cin>>numberOfitemsToSell;
