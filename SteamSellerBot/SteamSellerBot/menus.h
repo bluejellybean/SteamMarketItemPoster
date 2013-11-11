@@ -5,7 +5,11 @@ private:
 	//saves user variables to userVariables.txt
 	void saveNewVariables();
 
+	//prints the main menu
+	void printOutMainMenu();
+
 	//func that starts main, user enters values here
+	//TODO: change this variable to something better
 	void mainLoopOption();
 
 	//Checks that user input is valid
@@ -42,7 +46,7 @@ private:
 
 	//user confirms info is correct after calling the main loop and enter values
 	void confirmMainLoopInformation();
-	void printOutMainMenu();
+
 	//on key enter, allows user to set each option
 	void optionMenuLogic();
 public:
