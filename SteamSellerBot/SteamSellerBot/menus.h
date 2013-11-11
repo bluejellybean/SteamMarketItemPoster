@@ -28,8 +28,6 @@ private:
 	void howtoMenu();
 	void aboutMenu();
 	
-
-	
 	//dollar, cent, and # of items user is selling. Used in mainLoopOption
 	int dValue;
 	int cValue;
