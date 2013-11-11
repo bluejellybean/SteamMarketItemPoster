@@ -8,6 +8,7 @@ KeyboardSim::KeyboardSim(void){
 	int centValue = 0;
 }
 
+//enters the user inputs into steam
 void KeyboardSim::enterValuesIntoSteam(){
 	//full dollar amount
 

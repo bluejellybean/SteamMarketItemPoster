@@ -6,20 +6,19 @@
 #include <fstream>
 
 menus::menus(){
-	//Constructor
-	menuOption = 0;
 
+	menus::menuOption = 0;
 	menus::dValue = 0;
 	menus::cValue = 0;
 	menus::tempNumber = 0;
 	menus::numberOfitemsToSell = 0;
+
 	//userChangeableVariables
 	menus::pageNumber = 3; 
 	menus::scrollWheelAmount = 2;
 	menus::sleepTime = 3000;
 	menus::slotNumber = 1;
 	menus::sellButtonYAxisPos = 800;//920;//TODO: change this to 0 or something for construct
-
 
 	printOutMainMenu();
 }
@@ -29,20 +28,17 @@ void menus::loadPresetVariables(){
 	std::ifstream in("userVariables.txt");
 	in>>pageNumber>>scrollWheelAmount>>sleepTime>>slotNumber>>sellButtonYAxisPos;
 	in.close();
-	//pageNumber = 3;
-	//scrollWheelAmount = 2;
-	//sleepTime = 3000;
-	//slotNumber = 1;
-	//sellButtonYAxisPos = 800
 }
 
 void menus::saveNewVariables(){
+	
 	std::ofstream out("userVariables.txt");
 	out<<pageNumber<<"\n"<<scrollWheelAmount<<"\n"<<sleepTime<<"\n"<<slotNumber<<"\n"<<sellButtonYAxisPos;
 	out.close();
 }
 
 void menus::gotoMainMenuOnAnyKey() {//rename to gotoMainMenuOnAnyKey
+
 	std::cout<<"Enter any key to go back to the main menu..."<<std::endl;
 	menuOptionIntChecker(menuOption);
 
@@ -59,6 +55,7 @@ void menus::gotoMainMenuOnAnyKey() {//rename to gotoMainMenuOnAnyKey
 }
 
 void menus::printOutMainMenu(){
+
 	menuOption = 0;
 	std::cout<<"(1). Start Selling" <<std::endl;
 	std::cout<<"(2). Options" <<std::endl;
@@ -68,6 +65,7 @@ void menus::printOutMainMenu(){
 }
 
 void menus::menuLogic(){
+
 	menuOption = menuOptionIntChecker(menuOption);
 
 	switch (menuOption) {
@@ -91,6 +89,7 @@ void menus::menuLogic(){
 }
 
 int menus::menuOptionIntChecker(int checkedNumber){
+
 	checkedNumber = 0;
 	std::cin>>checkedNumber;
 	if(!std::cin>>checkedNumber){
@@ -101,6 +100,7 @@ int menus::menuOptionIntChecker(int checkedNumber){
 }
 
 void menus::optionMenuLogic(){	
+
 	menuOption = menuOptionIntChecker(menuOption);
 
 	switch (menuOption) {
@@ -127,6 +127,7 @@ void menus::optionMenuLogic(){
 }
 
 void menus::setSleepTime(){
+
 	std::cout<<"Current time between events is: "<<sleepTime<<std::endl;
 	std::cout<<"Enter new time between events:"<<std::endl;
 	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
@@ -141,6 +142,7 @@ void menus::setSleepTime(){
 }
 
 void menus::setPageNumber(){
+	
 	std::cout<<"Current page number is: "<<pageNumber<<std::endl;
 	std::cout<<"Emter a new page number:"<<std::endl;
 	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
@@ -155,6 +157,7 @@ void menus::setPageNumber(){
 }
 
 void menus::setSlotNumber(){
+	
 	std::cout<<"Current slot number is: "<<slotNumber<<std::endl;
 	std::cout<<"Enter a new slot number:"<<std::endl;
 	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
@@ -169,6 +172,7 @@ void menus::setSlotNumber(){
 }
 
 void menus::setScrollAmount(){
+
 	std::cout<<"Current scroll wheel amount is: "<<scrollWheelAmount<<std::endl;
 	std::cout<<"Enter new scroll wheel amount:"<<std::endl;
 	std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
@@ -184,6 +188,7 @@ void menus::setScrollAmount(){
 /////////////SellButtonYAxisPos///////////////////////
 //////////////////////////////////////////////////////
 void menus::setSellButtonYAxisPos(){
+
 	std::cout<<"Current Y axis is: "<<sellButtonYAxisPos<<std::endl;
 	std::cout<<"Enter new Y axis value:"<<std::endl;
 	std::cout<<"Note* you may have to play with this value a little bit"<<std::endl;
@@ -199,6 +204,7 @@ void menus::setSellButtonYAxisPos(){
 }
 
 void menus::confirmMainLoopInformation(){
+	
 	menuOption = menuOptionIntChecker(menuOption);
 	
 	switch (menuOption) {
@@ -245,6 +251,7 @@ void menus::mainLoopOption(){
 }
 
 void menus::optionsMenu(){
+	
 	std::cout<<"(1). Time between events:           " <<sleepTime<<std::endl;
 	std::cout<<"(2). Page number item is on:        "<<pageNumber<<std::endl;
 	std::cout<<"(3). Inventory slot to click:       "<<slotNumber<<std::endl;
