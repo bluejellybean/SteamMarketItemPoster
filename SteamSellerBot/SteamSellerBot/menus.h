@@ -12,7 +12,6 @@ private:
 	void printNewLines(int);
 
 	//func that starts main, user enters values here
-	//TODO: change this variable to something better
 	void startMainLoop();
 
 	//on key press, brings back to main menu
