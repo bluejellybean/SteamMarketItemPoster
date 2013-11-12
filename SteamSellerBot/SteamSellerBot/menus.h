@@ -40,6 +40,8 @@ private:
 	int sellButtonYAxisPos;
 	//set variables (used for options)
 	//TODO: turn these into a single use function(may or may not be able to actually do this)
+	int setUserVariableFunc(int);
+
 	void setSleepTime();
 	void setPageNumber();
 	void setSlotNumber();

@@ -18,7 +18,7 @@ menus::menus(){
 	menus::scrollWheelAmount = 2;
 	menus::sleepTime = 3000;
 	menus::slotNumber = 1;
-	menus::sellButtonYAxisPos = 800;//920;//TODO: change this to 0 or something for construct
+	menus::sellButtonYAxisPos = 800;
 
 	printOutMainMenu();
 }
@@ -45,11 +45,9 @@ void menus::gotoMainMenuOnAnyKey() {
 	switch(menuOption) {
 	case 1:
 		printOutMainMenu();
-    	//menuOption = 0;
 		menuLogic();
 	default:
-		printOutMainMenu();
-		//menuOption = 0;
+		printOutMainMenu();	
 		menuLogic();
 	}
 }
@@ -134,17 +132,24 @@ void menus::optionMenuLogic(){
 	}
 }
 
+int menus::setUserVariableFunc(int userVariable){
+	tempNumber = 0;
+	tempNumber = menuOptionIntChecker(tempNumber);
+
+	if(tempNumber > 0){
+		return tempNumber;
+	}
+	return userVariable;
+}
+
 void menus::setSleepTime(){
 
 	std::cout<<"Current time between events is: "<<sleepTime<<std::endl;
 	std::cout<<"Enter new time between events:"<<std::endl;
 	printNewLines(21);
-	tempNumber = 0;
-	tempNumber = menuOptionIntChecker(tempNumber);
+	
+	sleepTime = setUserVariableFunc(sleepTime);
 
-	if(tempNumber > 0){
-		sleepTime = tempNumber;
-	}
 	saveNewVariables();
 	optionsMenu();
 }
@@ -154,12 +159,9 @@ void menus::setPageNumber(){
 	std::cout<<"Current page number is: "<<pageNumber<<std::endl;
 	std::cout<<"Emter a new page number:"<<std::endl;
 	printNewLines(21);
-	tempNumber = 0;
-	tempNumber = menuOptionIntChecker(tempNumber);
-	
-	if(tempNumber > 0){
-		pageNumber = tempNumber;
-	}
+
+	pageNumber = setUserVariableFunc(pageNumber);
+
 	saveNewVariables();
 	optionsMenu();
 }
@@ -169,12 +171,9 @@ void menus::setSlotNumber(){
 	std::cout<<"Current slot number is: "<<slotNumber<<std::endl;
 	std::cout<<"Enter a new slot number:"<<std::endl;
 	printNewLines(21);
-	tempNumber = 0;
-	tempNumber = menuOptionIntChecker(tempNumber);
-	
-	if(tempNumber > 0 && tempNumber < 26){
-		slotNumber = tempNumber;
-	}
+
+	slotNumber = setUserVariableFunc(slotNumber);
+
 	saveNewVariables();
 	optionsMenu();
 }
@@ -193,20 +192,16 @@ void menus::setScrollAmount(){
 	saveNewVariables();
 	optionsMenu();
 }
-/////////////SellButtonYAxisPos///////////////////////
-//////////////////////////////////////////////////////
+
 void menus::setSellButtonYAxisPos(){
 
 	std::cout<<"Current Y axis is: "<<sellButtonYAxisPos<<std::endl;
 	std::cout<<"Enter new Y axis value:"<<std::endl;
-	std::cout<<"Note* you may have to play with this value a little bit"<<std::endl;
+	std::cout<<"Note* you may have to play with this value a little"<<std::endl;
 	printNewLines(20);
-	tempNumber = 0;
-	tempNumber = menuOptionIntChecker(tempNumber);
-	if(tempNumber > 0){
-		sellButtonYAxisPos = tempNumber;
-	}
 
+	sellButtonYAxisPos = setUserVariableFunc(sellButtonYAxisPos);
+	
 	saveNewVariables();
 	optionsMenu();
 }
