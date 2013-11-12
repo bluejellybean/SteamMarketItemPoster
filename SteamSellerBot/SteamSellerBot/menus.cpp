@@ -39,7 +39,7 @@ void menus::saveNewVariables(){
 
 void menus::gotoMainMenuOnAnyKey() {
 
-	std::cout<<"Enter any key to go back to the main menu..."<<std::endl;
+	std::cout<<"Enter any key to return to the main menu..."<<std::endl;
 	menuOptionIntChecker(menuOption);
 
 	switch(menuOption) {
