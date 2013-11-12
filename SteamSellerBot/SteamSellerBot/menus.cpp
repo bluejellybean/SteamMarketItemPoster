@@ -260,7 +260,8 @@ void menus::optionsMenu(){
 	std::cout<<"(4). Scroll Wheel amount:           "<<scrollWheelAmount<<std::endl;
 	std::cout<<"(5). Y axis positon on sell button: "<<sellButtonYAxisPos<<std::endl;
 	//new lines will need to be updated on every change
-	printNewLines(18);
+	printNewLines(17);
+	std::cout<<"Enter option to modify value or any other character to return to main menu..."<<std::endl;
 	optionMenuLogic();
 }
 
