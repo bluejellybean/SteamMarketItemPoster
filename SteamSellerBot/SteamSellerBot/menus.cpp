@@ -37,7 +37,7 @@ void menus::saveNewVariables(){
 	out.close();
 }
 
-void menus::gotoMainMenuOnAnyKey() {//rename to gotoMainMenuOnAnyKey
+void menus::gotoMainMenuOnAnyKey() {
 
 	std::cout<<"Enter any key to go back to the main menu..."<<std::endl;
 	menuOptionIntChecker(menuOption);
@@ -78,7 +78,7 @@ void menus::menuLogic(){
 
 	switch (menuOption) {
 	case 1:
-		mainLoopOption();
+		startMainLoop();
 		break;
 	case 2:
 		optionsMenu();
@@ -139,7 +139,6 @@ void menus::setSleepTime(){
 	std::cout<<"Current time between events is: "<<sleepTime<<std::endl;
 	std::cout<<"Enter new time between events:"<<std::endl;
 	printNewLines(21);
-	//std::cout<<"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"<<std::endl;
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
 
@@ -226,7 +225,7 @@ void menus::confirmMainLoopInformation(){
 }
 //////////////MAIN LOOP HERE//////////////////////
 //////////////////////////////////////////////////
-void menus::mainLoopOption(){
+void menus::startMainLoop(){
 	
 	std::cout<<"Enter how many Items for sale: "<<std::endl;
 	printNewLines(22);

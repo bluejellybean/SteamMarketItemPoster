@@ -13,7 +13,7 @@ private:
 
 	//func that starts main, user enters values here
 	//TODO: change this variable to something better
-	void mainLoopOption();
+	void startMainLoop();
 
 	//on key press, brings back to main menu
 	void gotoMainMenuOnAnyKey();
@@ -28,7 +28,7 @@ private:
 	void howtoMenu();
 	void aboutMenu();
 	
-	//dollar, cent, and # of items user is selling. Used in mainLoopOption
+	//dollar, cent, and # of items user is selling. Used in startMainLoop
 	int dValue;
 	int cValue;
 	int numberOfitemsToSell;
