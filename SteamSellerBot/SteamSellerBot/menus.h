@@ -53,6 +53,11 @@ private:
 
 	//on key enter, allows user to set each option
 	void optionMenuLogic();
+	
+	//TODO: rename this to something better
+	void saveVariablesGotoOptions();
+
+
 public:
 	menus();
 

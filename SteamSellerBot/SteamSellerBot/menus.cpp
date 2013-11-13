@@ -132,6 +132,12 @@ void menus::optionMenuLogic(){
 	}
 }
 
+void menus::saveVariablesGotoOptions(){
+
+	saveNewVariables();
+	optionsMenu();
+}
+
 int menus::setUserVariableFunc(int userVariable){
 	tempNumber = 0;
 	tempNumber = menuOptionIntChecker(tempNumber);
@@ -149,9 +155,8 @@ void menus::setSleepTime(){
 	printNewLines(21);
 	
 	sleepTime = setUserVariableFunc(sleepTime);
-
-	saveNewVariables();
-	optionsMenu();
+	
+	saveVariablesGotoOptions();
 }
 
 void menus::setPageNumber(){
@@ -162,8 +167,7 @@ void menus::setPageNumber(){
 
 	pageNumber = setUserVariableFunc(pageNumber);
 
-	saveNewVariables();
-	optionsMenu();
+	saveVariablesGotoOptions();
 }
 
 void menus::setSlotNumber(){
@@ -174,8 +178,7 @@ void menus::setSlotNumber(){
 
 	slotNumber = setUserVariableFunc(slotNumber);
 
-	saveNewVariables();
-	optionsMenu();
+	saveVariablesGotoOptions();
 }
 
 void menus::setScrollAmount(){
@@ -189,8 +192,7 @@ void menus::setScrollAmount(){
 	if(tempNumber >= 0){
 		scrollWheelAmount = tempNumber;
 	}
-	saveNewVariables();
-	optionsMenu();
+	saveVariablesGotoOptions();
 }
 
 void menus::setSellButtonYAxisPos(){
@@ -202,8 +204,7 @@ void menus::setSellButtonYAxisPos(){
 
 	sellButtonYAxisPos = setUserVariableFunc(sellButtonYAxisPos);
 	
-	saveNewVariables();
-	optionsMenu();
+	saveVariablesGotoOptions();
 }
 
 void menus::confirmMainLoopInformation(){
@@ -218,8 +219,7 @@ void menus::confirmMainLoopInformation(){
 		menuLogic();
 	}
 }
-//////////////MAIN LOOP HERE//////////////////////
-//////////////////////////////////////////////////
+
 void menus::startMainLoop(){
 	
 	std::cout<<"Enter how many Items for sale: "<<std::endl;
@@ -259,7 +259,7 @@ void menus::optionsMenu(){
 	std::cout<<"(3). Inventory slot to click:       "<<slotNumber<<std::endl;
 	std::cout<<"(4). Scroll Wheel amount:           "<<scrollWheelAmount<<std::endl;
 	std::cout<<"(5). Y axis positon on sell button: "<<sellButtonYAxisPos<<std::endl;
-	//new lines will need to be updated on every change
+
 	printNewLines(17);
 	std::cout<<"Enter option to modify value or any other character to return to main menu..."<<std::endl;
 	optionMenuLogic();
@@ -275,7 +275,6 @@ void menus::howtoMenu(){
 	std::cout<<"5. Open steam to your inventory"<<std::endl;
 	std::cout<<"6. Wait! Seriously though, don't touch your pc until it's done"<<std::endl;
 	
-	//new lines will need to be updated on every change
 	printNewLines(16);
 	gotoMainMenuOnAnyKey();
 }
@@ -287,7 +286,6 @@ void menus::aboutMenu(){
 	std::cout<<"software developed by Alex Barkell. 2013"<<std::endl;
 	std::cout<<std::endl;
 	
-	//new lines will need to be updated on every change
 	printNewLines(18);
 	gotoMainMenuOnAnyKey();
 }
